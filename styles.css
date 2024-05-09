@@ -1,0 +1,136 @@
+html,
+body {
+  background-color: white;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  position: relative;
+  font-family: "Calibri", "Geneva", sans-serif;
+  font-size: 24px;
+}
+
+#pr-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content {
+  position: relative;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  width: 100vw;
+  height: 100vh;
+  margin: 32px;
+
+  @media (max-width: 450px) {
+    padding: 24px 0 0 0;
+    display: flex;
+    flex-direction: column;
+  }
+}
+.title {
+  position: absolute;
+  left: 32px;
+  top: 5px;
+  margin: 0;
+}
+
+.progress-ring {
+  stroke-width: 8;
+  stroke: #eef3f6;
+  fill: none;
+  transform-origin: center;
+  background: radial-gradient(
+    ellipse closest-side,
+    transparent 74%,
+    #eef3f6 74%,
+    #eef3f6 94%,
+    transparent 94%
+  );
+
+  @media (max-width: 450px) {
+    margin: 24px 0 0 0;
+  }
+}
+
+.progress-ring__circle {
+  stroke-width: 20;
+  stroke: #005dff;
+  fill: none;
+  transform-origin: center;
+  transform: rotate(-90deg);
+  transition: stroke-dashoffset 0.3s;
+}
+
+.switch {
+  display: flex;
+}
+
+input[type="number"] {
+  width: 50px;
+  height: 30px;
+  border-radius: 25px;
+  border: 2px solid black;
+  font-size: 18px;
+  font-weight: bolder;
+  text-align: center;
+  margin-bottom: 20px;
+  margin-right: 30px;
+}
+
+input:focus[type="number"] {
+  outline: none;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="checkbox"] {
+  position: relative;
+  width: 50px;
+  height: 30px;
+  -webkit-appearance: none;
+  outline: none;
+  background: #eef3f6;
+  border-radius: 20px;
+  transition: 0.5s;
+  margin-bottom: 20px;
+  margin-right: 30px;
+}
+
+input:checked[type="checkbox"] {
+  background: #005dff;
+}
+
+input:disabled[type="checkbox"] {
+  background: gray;
+}
+
+input:disabled[type="number"] {
+  background: gray;
+  border: 2px solid gray;
+}
+
+input[type="checkbox"]:before {
+  content: "";
+  position: absolute;
+  width: 23px;
+  height: 23px;
+  border-radius: 20px;
+  top: 3.6px;
+  left: 3.5px;
+  background: white;
+  transition: 0.5s;
+  transform: scale(1.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+input:checked[type="checkbox"]:before {
+  left: 23px;
+}

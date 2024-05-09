@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <title>Progress</title>
+
+    <script type=""></script>
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <div class="content">
+      <div id="pr-bar">
+        <p class="title">Progress</p>
+        <svg id="pr-r" class="progress-ring" width="200" height="200">
+          <circle
+            id="progress-ring__circle"
+            class="progress-ring__circle"
+            stroke="#005dff"
+            stroke-width="4"
+            cx="100"
+            cy="100"
+            r="84"
+            fill="transparent"
+          />
+        </svg>
+      </div>
+      <div id="values">
+        <div>
+          <input
+            id="valueInput"
+            type="number"
+            class="percent"
+            min="0"
+            max="100"
+          />
+          Value
+        </div>
+        <div class="switch">
+          <input
+            onclick="setProgress(20)"
+            type="checkbox"
+            id="rotateCheckbox"
+          />
+          Animate
+        </div>
+        <div class="switch">
+          <input onclick="hide('pr-r')" type="checkbox" /> Hide
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

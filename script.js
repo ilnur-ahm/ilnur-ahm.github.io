@@ -13,7 +13,7 @@ circle.style.strokeDashoffset = circumference;
 const rotateCheckbox = document.getElementById("rotateCheckbox");
 const box = document.querySelector(".progress-ring__circle");
 
-let angle = -90; // начальный угол
+let angle = -90;
 let intervalId;
 
 const setProgress = (percent) => {
@@ -45,12 +45,12 @@ const hide = (id) => {
   }
 };
 
-// Функция, которая будет вызываться каждые 0.1 секунды
+
 const rotateBox = () => {
-  box.style.transform = `rotate(${angle}deg)`; // устанавливаем угол в CSS
-  angle += 1; // увеличиваем угол на 1 градус
+  box.style.transform = `rotate(${angle}deg)`; 
+  angle += 1; 
   if (angle > 270) {
-    angle = -90; // сбрасываем угол на начальное значение после достижения 180 градусов
+    angle = -90; 
   }
 };
 
@@ -60,9 +60,9 @@ input.addEventListener("input", function () {
 
 rotateCheckbox.addEventListener("change", () => {
   if (rotateCheckbox.checked) {
-    intervalId = setInterval(rotateBox, 0.05); // вызываем функцию rotateBox каждые 0.1 секунды
+    intervalId = setInterval(rotateBox, 0.05);
   } else {
-    clearInterval(intervalId); // останавливаем интервал при выключении чекбокса
+    clearInterval(intervalId);
     box.style.transform = "rotate(-90deg)";
     inputValueHandler(input.value);
   }

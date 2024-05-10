@@ -75,7 +75,7 @@ if (valueFromQuery) {
 }
 
 if (Number(animationModeFromQuery)) {
-  setProgress(20);
+  animationValue = setProgress(20);
   intervalId = setInterval(rotateBox, 0.05);
   animateCheckbox.disabled = true;
 }
